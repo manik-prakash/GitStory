@@ -70,7 +70,7 @@ export default function Home() {
     <ErrorBoundary>
       <div className="min-h-screen bg-linear-to-br from-background via-background to-blue-50/20 dark:to-slate-900/40">
         <main className="max-w-6xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-          {/* Header */}
+
           <div className="mb-12 text-center">
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">GitHub Timeline</h1>
             <p className="text-lg text-muted-foreground">
@@ -78,12 +78,12 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Search Section */}
+
           <div className="mb-12">
             <GitHubInput onSearch={handleSearch} loading={loading} />
           </div>
 
-          {/* Results Section */}
+
           {error && <ErrorAlert message={error} onDismiss={() => setError("")} />}
 
           {repos.length > 0 && !loading && (

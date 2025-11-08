@@ -13,7 +13,6 @@ interface YearSummaryProps {
 }
 
 export function YearSummary({ repos }: YearSummaryProps) {
-  // Group repos by year and calculate statistics
   const yearStats = repos.reduce(
     (acc, repo) => {
       const year = new Date(repo.created_at).getFullYear()
@@ -27,7 +26,6 @@ export function YearSummary({ repos }: YearSummaryProps) {
     {} as Record<number, { count: number; repos: Repository[] }>,
   )
 
-  // Sort years in descending order
   const sortedYears = Object.entries(yearStats).sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
 
   const maxCount = Math.max(...Object.values(yearStats).map((s) => s.count))
@@ -36,7 +34,6 @@ export function YearSummary({ repos }: YearSummaryProps) {
 
   return (
     <div className="space-y-6">
-      {/* Summary Statistics Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-card border border-border rounded-lg p-4">
           <p className="text-sm font-medium text-muted-foreground">Total Repositories</p>
@@ -52,7 +49,6 @@ export function YearSummary({ repos }: YearSummaryProps) {
         </div>
       </div>
 
-      {/* Year Distribution Chart */}
       <div className="bg-card border border-border rounded-lg p-8">
         <h2 className="text-2xl font-bold text-foreground mb-8">Repositories by Year</h2>
 

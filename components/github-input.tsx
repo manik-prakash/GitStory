@@ -3,7 +3,6 @@
 import type React from "react"
 import { validateGitHubUsername } from "@/lib/validation"
 import { useState } from "react"
-// import { Button } from "@/components/ui/button"
 
 interface GitHubInputProps {
   onSearch: (username: string) => void

@@ -14,7 +14,6 @@ interface TimelineDisplayProps {
 }
 
 export function TimelineDisplay({ repos, username }: TimelineDisplayProps) {
-  // Sort repos by date (newest first)
   const sortedRepos = [...repos].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
 
   const formatDate = (dateString: string) => {
@@ -50,21 +49,11 @@ export function TimelineDisplay({ repos, username }: TimelineDisplayProps) {
         </a>
       </div>
 
-      {/* Timeline */}
       <div className="relative">
-        {/* Vertical line */}
         <div className="absolute left-4 top-0 bottom-0 w-1 bg-linear-to-b from-primary/60 via-primary/40 to-primary/20"></div>
-
-        {/* Timeline items */}
         <div className="space-y-6 ml-20">
           {sortedRepos.map((repo, index) => (
             <div key={repo.id} className="relative">
-              {/* Timeline dot */}
-              <div className="absolute -left-16 top-2 w-8 h-8 bg-primary rounded-full border-4 border-background shadow-lg flex items-center justify-center">
-                <div className="w-3 h-3 bg-primary-foreground rounded-full"></div>
-              </div>
-
-              {/* Card */}
               <a
                 href={repo.url}
                 target="_blank"
