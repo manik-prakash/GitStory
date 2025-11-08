@@ -6,6 +6,7 @@ import { TimelineDisplay } from "@/components/timeline-display"
 import { YearSummary } from "@/components/year-summary"
 import { ErrorBoundary } from "@/components/error-boundary"
 import { ErrorAlert } from "@/components/error-alert"
+import { ThemeSwitcher } from "@/components/theme-switcher"
 
 interface Repository {
   id: number
@@ -71,11 +72,16 @@ export default function Home() {
       <div className="min-h-screen bg-linear-to-br from-background via-background to-blue-50/20 dark:to-slate-900/40">
         <main className="max-w-6xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
 
-          <div className="mb-12 text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">GitHub Timeline</h1>
-            <p className="text-lg text-muted-foreground">
-              Visualize your GitHub repository history in an elegant timeline format
-            </p>
+          <div className="flex justify-between items-center mb-12">
+            <div className="flex-1">
+              <div className="text-center">
+                <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">GitHub Timeline</h1>
+                <p className="text-lg text-muted-foreground">
+                  Visualize your GitHub repository history in an elegant timeline format
+                </p>
+              </div>
+            </div>
+            <ThemeSwitcher />
           </div>
 
 
